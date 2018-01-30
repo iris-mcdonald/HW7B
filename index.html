@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="robots"
+          content="nofollow" />
+    <title>Iris McDonald HW7B</title>
+</head>
+<body>
+    <h2>JavaScript Function HW7B </h2>
+
+    <p>This example calls a function which performs loop with switch back</p>
+
+    <script>
+        function startProcess() {
+            var i = 1;
+            var volumeSize;
+            while (i <= 10)
+            {
+                var length = i + 2;
+                var width = i + 3;
+                var height = i + 4;
+                document.write('<br>');
+                var myVolume = getVolume(length, width, height);
+
+                if (myVolume >= 60 && myVolume <= 70)
+                {
+                    volumeSize = "Small";
+                } else if (myVolume > 70 && myVolume <= 80) {
+                    volumeSize = "Medium";
+                } else if (myVolume > 80 && myVolume <= 90) {
+                    volumeSize = "Large";
+                } else if (myVolume > 90 && myVolume <= 100) {
+                    volumeSize = "Extra Large";
+                }
+                else {
+                    volumeSize = "Above Extra Large";
+                }
+
+                switch (volumeSize)
+                {
+                    case 'Small':
+                        document.write('Small Volume: ' + myVolume);
+                        break;
+                    case 'Medium':
+                        document.write('Medium Volume: ' + myVolume);
+                        break;
+                    case 'Large':
+                        document.write('Large Volume: ' + myVolume);
+                        break;
+                    case 'Extra Large':
+                        document.write('Extra Large Volume: ' + myVolume);
+                        break;
+                    default:
+                        document.write("Above Extra Large: " + myVolume);
+                        break;
+                }
+                i++;
+            }
+        }
+
+        function getVolume(length, width, height) {
+            var result = length * width * height;
+            return result;
+        }
+
+        startProcess();
+
+    </script>
+</body>
+</html>
+
